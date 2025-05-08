@@ -170,7 +170,7 @@
   border-radius: 40px;
   border: 1px solid #d6eaff;
   color: #007bff;
-  font-weight: 500;
+  font-weight: bold;
   font-family: Poppins, cursive;
   font-size: 11.52px;
 }
@@ -200,7 +200,9 @@
         }
       .menu-left span {
         margin-right: 30px;
-        font-size: 20px;
+        font-family: Quicksand-Bold;
+        font-size: 17.28px;
+        font-weight: bold;
         color: #555; 
         opacity: 0.9;
         }
@@ -249,90 +251,169 @@
     const banner = document.createElement("div");
     banner.innerHTML = `
       <div class="custom-banner">
+        <div class="banner-categories">
+          <span data-index="0" class="active">ANNELER GÜNÜ</span>
+          <span data-index="1">PERŞEMBEDEN PAZARA</span>
+          <span data-index="2">GECE FIRSATI</span>
+          <span data-index="3">OYUNCAK ŞÖLENİ</span>
+          <span data-index="4">ÇEK KAMPANYASI</span>
+          <span data-index="5">ARAÇ GEREÇ</span>
+          <span data-index="6">BEBEK MODASI</span>
+          <span data-index="7">BEZ&MENDİL</span>
+          <span data-index="8">BANYO BAKIM</span>
+          <span data-index="9">KAMPANYALAR</span>
+          <span data-index="10">DUYURU</span>
+        </div>
         <div class="main-banner">
-          <div class="banner-text">
-            <h2>Tüm <strong>baby plus</strong> Termoslarda</h2>
-            <h1 style="color: red;">NET %40 İndirim!</h1>
-            <button class="banner-btn">Ürünleri İncele</button>
-          </div>
-          <div class="banner-images">
-            <img src="https://cdn03.e-bebek.com/mnresize/300/300/media/p/termos1.jpg" alt="Termos" />
-            <img src="https://cdn03.e-bebek.com/mnresize/300/300/media/p/termos2.jpg" alt="Termos" />
+          <div class="main-page">
+            <img class="main-img" src="https://cdn05.e-bebek.com/media/c/anneler-gunune-ozel-tum-philips-avent-beslenme-gereclerinde-sepette-net-30-indirim-d.jpg" width="1170px" />
           </div>
         </div>
-        <div class="banner-thumbnails">
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
+        <div class="thumbnail-wrapper">
+          <button class="arrow-btn left-arrow">
+            <img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" width="16" />
+          </button>
+          <div class="banner-thumbnails">
+            <img class="thumb-img active-thumb" src="https://cdn05.e-bebek.com/media/c/anneler-gunune-ozel-tum-philips-avent-beslenme-gereclerinde-sepette-net-30-indirim-d.jpg" />
+            <img class="thumb-img" src="https://cdn05.e-bebek.com/media/c/anneler-gunune-ozel-tum-oioi-beslenme-gereclerinde-net-30-indirim-dd.jpg" />
+            <img class="thumb-img" src="https://cdn05.e-bebek.com/media/c/-anneler-gunune-ozel-tum-baby-plus-termoslarda-net-40-indirim-d.jpg" />
+            <img class="thumb-img" src="https://cdn05.e-bebek.com/media/c/anneler-gunune-ozel-tum-emzirme-urunlerinde-sepette-net-30-indirim-d.jpg" />
+            <img class="thumb-img" src="https://cdn05.e-bebek.com/media/c/anneler-gunune-ozel-tum-hamile-giyim-ve-ic-giyim-urunlerinde-2-urune-sepette-net-50-indirim-d.jpg" />
+            <img class="thumb-img" src="https://cdn05.e-bebek.com/media/c/anneler-gunu-film-yonlendirme-d.jpg" />
+            <img class="thumb-img" src="https://cdn05.e-bebek.com/media/c/anneler-gunune-ozel-sevgi-dolu-kombinler-d.jpg" />
+          </div>
+          <button class="arrow-btn right-arrow">
+            <img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" width="16" />
+          </button>
         </div>
       </div>
     `;
-    const bannerStyle = document.createElement("style");
-    bannerStyle.textContent = `
+    
+    const styleSlider = document.createElement("style");
+    styleSlider.textContent = `
       .custom-banner {
-        background: linear-gradient(to bottom, #f85a9b, #f49cbc);
-        width:100%;
-        padding: 24px 16px;
-        border-radius: 8px;
-        margin: 20px auto;
+        width: 100%;
+        background: #EA4079;
+        padding: 12px 14px;
         
+        margin: 20px auto;
+        font-family: 'Poppins', cursive;
+      }
+    
+      .banner-categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
         
       }
+    
+      .banner-categories span {
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 12px 30px;
+        border-radius: 30px;
+      }
+    
+      .banner-categories span.active {
+        background: white;
+        color: orange;
+      }
+    
       .main-banner {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .banner-text h2 {
-        color: white;
-        margin: 0;
-      }
-      .banner-text h1 {
-        margin: 8px 0;
-      }
-      .banner-btn {
-        background: #e91e63;
-        border: none;
-        color: white;
-        padding: 10px 18px;
-        font-weight: bold;
-        border-radius: 20px;
-        cursor: pointer;
-        margin-top: 12px;
-      }
-      .banner-images img {
-        height: 120px;
-        margin-left: 12px;
-        border-radius: 8px;
-        background: white;
-      }
-      .banner-thumbnails {
-        margin-top: 16px;
-        display: flex;
-        gap: 8px;
         justify-content: center;
       }
-      .banner-thumbnails .thumb {
-        width: 40px;
-        height: 24px;
-        background: #fff4f7;
-        border-radius: 4px;
+    
+      .main-img {
+        border-radius: 40px;
       }
+    
+      .thumbnail-wrapper {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+    
+      .arrow-btn {
+        background: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.2s;
+        margin: 0px 20px ;
+      }
+    
+      .arrow-btn:hover {
+        transform: scale(1.05);
+      }
+    
+      .banner-thumbnails {
+        display: flex;
+        gap: 12px;
+        
+      }
+    
+      .thumb-img {
+        width: 125px;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.2s, border 0.2s;
+        border: 2px solid transparent;
+      }
+    
+      .thumb-img.active-thumb {
+        transform: scale(1.1);
+        width: 108px;
+        border: 2px solid white;
+      }
+    
       @media (max-width: 600px) {
         .main-banner {
           flex-direction: column;
           text-align: center;
         }
-        .banner-images {
-          margin-top: 16px;
-        }
       }
     `;
-    document.head.appendChild(bannerStyle);
+    document.head.appendChild(styleSlider);
     document.body.appendChild(banner);
+    
+    const thumbImgs = document.querySelectorAll(".thumb-img");
+    const mainImg = document.querySelector(".main-img");
+    const categorySpans = document.querySelectorAll(".banner-categories span");
+    
+    thumbImgs.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => {
+        thumbImgs.forEach(t => t.classList.remove("active-thumb"));
+        thumb.classList.add("active-thumb");
+        mainImg.src = thumb.src;
+      });
+    });
+    
+    categorySpans.forEach(span => {
+      span.addEventListener("click", () => {
+        categorySpans.forEach(s => s.classList.remove("active"));
+        span.classList.add("active");
+
+      });
+    });
+    
   
     let products = JSON.parse(localStorage.getItem(STORAGE_KEY));
     const favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
