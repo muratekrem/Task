@@ -3,60 +3,72 @@
     const FAVORITES_KEY = "carousel_favorites";
     const DATA_URL = "https://gist.githubusercontent.com/sevindi/8bcbde9f02c1d4abe112809c974e1f49/raw/9bf93b58df623a9b16f1db721cd0a7a539296cf0/products.json";
   
-    // === HEADER HTML ===
     const headerWrapper = document.createElement("div");
     headerWrapper.innerHTML = `
       <div class="top-blue-bar">
         <div class="top-banner-text">Seçili Mobilyalarda Ücretsiz Montaj Hizmeti!</div>
         <div class="top-links">
-          <a href="#"><img src="https://cdn05.e-bebek.com/media/c/yardim-logo.png" width="16" /> Yardım</a>
-          <a href="#"><img src="https://cdn05.e-bebek.com/media/c/iletisim-logo.png" width="16" /> İletişim</a>
+          <a href="#"><img src="https://cdn05.e-bebek.com/media/c/yardim-logo.png" width="16" /> <div class="font-pop" > YARDIM</div> </a>
+          <a href="#"><img src="https://cdn05.e-bebek.com/media/c/iletisim-logo.png" width="16" /> <div class="font-pop" >İLETİŞİM </div></a>
         </div>
       </div>
+      <div class="middle-area">
+      <div class="middle-box">
       <div class="main-header">
-      
-        <div class="left-group">
-         <span class="brand-name">ebebek</span>
-          <img src="https://play-lh.googleusercontent.com/3bm3KABk8qI5hq_D0feMfd09tCaJ4ojKC9f3EUnd5TWBCHLT956hBCowpsKA6b0Bm3w=w240-h480-rw" class="logo" />
+        <div class="main-inside">
+         <div class="left-group">
           
-        </div>
-        <div class="search-section">
-          <input type="text" placeholder="Ürün, kategori veya marka arayın" />
-        </div>
-        <div class="right-icons">
-          <span class="icon">❤️</span>
-          <span class="icon">👤 Hesabım</span>
-          <span class="icon">🛒 Sepetim</span>
+           <img src="https://cdn05.e-bebek.com/y.ebebek/9973673459742.svg" class="logo" />
+          
+         </div>
+         <div class="search-section">
+          
+         	
+           <input type="text"  placeholder="Ürün, kategori veya marka arayın"  />
+         </div>
+         <div class="right-icons">
+            <span class="icon btn-box">❤️</span>
+            <span class="icon btn-box">👤 Giriş Yap / Üye Ol</span>
+            <span class="icon btn-box">🛒 Sepetim</span>
+</div>
+
         </div>
         
       </div>
       <div class="menu-bar">
+      <div class="menu-inside">
         <div class="menu-left">
-          <span>Kategoriler</span>
-          <span>Keşfet</span>
-          <span>Hediye</span>
-          <span class="blue">İnternete Özel Ürünler</span>
-          <span class="orange">Kampanyalar</span>
-          <span class="orange">Outlet</span>
+             <span>Kategoriler <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ViUL6od9D_pH97Dt4-0NAamtdkqbUGvjRE1PKzhgxqzXSQoFzFuPHoLTjKL58rSBBWA&usqp=CAU" width="12" style="margin-left: 4px;" /></span>
+             <span>Keşfet <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ViUL6od9D_pH97Dt4-0NAamtdkqbUGvjRE1PKzhgxqzXSQoFzFuPHoLTjKL58rSBBWA&usqp=CAU" width="12" style="margin-left: 4px;" /></span>
+            <span>Hediye <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ViUL6od9D_pH97Dt4-0NAamtdkqbUGvjRE1PKzhgxqzXSQoFzFuPHoLTjKL58rSBBWA&usqp=CAU" width="12" style="margin-left: 4px;" /></span>
+            <span class="blue">İnternete Özel Ürünler</span>
+            <span class="orange">Kampanyalar</span>
+             <span class="orange">Outlet</span>
         </div>
         <div class="menu-right">
           <span><img src="https://cdn-icons-png.flaticon.com/512/34/34627.png" width="14" /> SİPARİŞİM NEREDE</span>
           <span><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" width="14" /> EN YAKIN EBEBEK</span>
         </div>
       </div>
+      </div>
+      </div>
+      </div>
     `;
   
-    // === HEADER CSS ===
     const headerStyle = document.createElement("style");
     headerStyle.textContent = `
-      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
-      body { margin: 0; font-family: 'Nunito', sans-serif; }
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,400&display=swap');
+
+      body { margin: 0; }
   
+      .font-pop{
+      font-size:11px;
+      }
       .top-blue-bar {
         background: #0096db;
         color: white;
         font-size: 16px;
-        padding: 10px 32px;
+        padding: 18px 32px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -64,15 +76,18 @@
       }
       .top-banner-text {
         font-weight: bold;
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
       }
       .top-links {
         position: absolute;
+        padding-right:230px;
+        
         right: 50px;
         display: flex;
+        margin-right:12px;
         gap: 20px;
-        font-size: 13px;
+        font-size: 17px;
         align-items: center;
       }
       .top-links a {
@@ -82,28 +97,51 @@
         align-items: center;
         gap: 4px;
       }
-  
-      .main-header {
-        display: flex;
-        justify-content: space-evenly;
-        margin-top: 20px;
-        padding: 10px 32px;
-        gap: 16px;
-      }
-        .top-bar{
-            display: flex;
-            justify-content: center;
+        .middle-area{
+        display:grid;
+        align-items:center;
+        margin-top:12px;
         }
+  
+      .middle-area {
+      
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+  .middle-box {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header,
+.menu-bar {
+  width: 100%;
+}
+
+.main-inside,
+.menu-inside {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 32px;
+}
+
       .left-group {
         display: flex;
-        align-items: space-between;
-        
-        gap: 6px;
+        align-items:center;  
       }
       .brand-name {
-        font-size: 20px;
+        font-size: 23px;
         font-weight: 600;
-        color: #333;
+        color: #007BFF;
       }
       .logo {
         height: 32px;
@@ -111,22 +149,36 @@
       .search-section {
         
         display: flex;
-        width: 30%;
+        width: 50%;
        
       }
-      .search-section input {
-        width: 100%;
-        max-width: 600px;
-        padding: 10px 18px;
-        border-radius: 24px;
-        border: 1px solid #ccc;
-        background: #f2f9ff;
-        font-size: 14px;
-      }
+      
+.search-section input {
+  width: 100%;
+  max-width: 1000px;
+  padding: 14px 24px; 
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  background: #f2f9ff;
+  font-size: 15px;
+}
+
+
+.btn-box {
+  background: #f2f9ff;
+  padding: 15px 24px;
+  border-radius: 40px;
+  border: 1px solid #d6eaff;
+  color: #007bff;
+  font-weight: 500;
+  font-family: Poppins, cursive;
+  font-size: 11.52px;
+}
+
       .right-icons {
         display: flex;
         gap: 14px;
-        font-size: 14px;
+        font-size: 17px;
         align-items: center;
         justify-content: flex-start;
       }
@@ -136,29 +188,30 @@
       }
   
       .menu-bar {
+        width:100%
+      }
+      .menu-inside{
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 10px 32px;
-        font-size: 14px;
-        font-weight: 500;
-        background: white;
-        border-bottom: 1px solid #eee;
-        flex-wrap: wrap;
+        
       }
+      .menu-left {
+        margin-right: 90px;
+        }
       .menu-left span {
-        margin-right: 20px;
-        cursor: pointer;
-        padding: 6px 4px;
-      }
+        margin-right: 30px;
+        font-size: 20px;
+        color: #555; 
+        opacity: 0.9;
+        }
       .menu-left span:hover {
-        border-bottom: 2px solid #0096db;
+        
       }
       .menu-left .blue {
-        color: #007BFF;
+        color: #5b9bd5;
       }
       .menu-left .orange {
-        color: #ff9900;
+        color: #f4a261;
       }
       .menu-right span {
         display: inline-flex;
@@ -193,7 +246,6 @@
     document.head.appendChild(headerStyle);
     document.body.prepend(headerWrapper);
   
-    // === BANNER ALANI ===
     const banner = document.createElement("div");
     banner.innerHTML = `
       <div class="custom-banner">
@@ -221,11 +273,12 @@
     bannerStyle.textContent = `
       .custom-banner {
         background: linear-gradient(to bottom, #f85a9b, #f49cbc);
+        width:100%;
         padding: 24px 16px;
         border-radius: 8px;
         margin: 20px auto;
-        font-family: Arial, sans-serif;
-        max-width: 1200px;
+        
+        
       }
       .main-banner {
         display: flex;
@@ -281,7 +334,6 @@
     document.head.appendChild(bannerStyle);
     document.body.appendChild(banner);
   
-    // === VERİYİ YÜKLE
     let products = JSON.parse(localStorage.getItem(STORAGE_KEY));
     const favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
   
@@ -296,7 +348,6 @@
       }
     }
   
-    // === CAROUSEL STİLLERİ ===
     const style = document.createElement("style");
     style.textContent = `
       * { box-sizing: border-box; }
@@ -389,7 +440,6 @@
     `;
     document.head.appendChild(style);
   
-    // === CAROUSEL ===
     const container = document.createElement("div");
     container.className = "carousel-container";
     container.innerHTML = `<div class="carousel-title">Beğenebileceğinizi düşündüklerimiz</div><div class="carousel"></div>`;
